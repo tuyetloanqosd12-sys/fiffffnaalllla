@@ -29,7 +29,7 @@ const Tooltip = ({ children, content, position = 'top', maxWidth = '240px' }) =>
       </div>
       
       {isVisible && (
-        <div className={`absolute z-50 ${positionClasses[position]} pointer-events-none`}>
+        <div className={`absolute z-[9999] ${positionClasses[position]} pointer-events-none`}>
           <div 
             className="bg-gray-800 text-white text-xs leading-relaxed rounded-2xl px-4 py-3 shadow-2xl"
             style={{ maxWidth, minWidth: '200px' }}
