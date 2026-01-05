@@ -53,7 +53,8 @@ const NFTUtilitySection = () => {
         Beyond collectibles — unlock real utility, rewards, and exclusive ecosystem benefits
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Desktop: Grid */}
+      <div className="hidden md:grid md:grid-cols-3 gap-8">
         {utilityItems.map((item, index) => (
           <div key={index} className="text-center">
             <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
@@ -65,6 +66,28 @@ const NFTUtilitySection = () => {
             <p className="text-sm text-gray-600">{item.description}</p>
           </div>
         ))}
+      </div>
+
+      {/* Mobile: Horizontal Scroll */}
+      <div className="md:hidden overflow-x-auto pb-4 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide">
+        <div className="flex gap-4" style={{ width: 'max-content' }}>
+          {utilityItems.map((item, index) => (
+            <div key={index} className="text-center snap-center shrink-0 bg-white border border-gray-200 rounded-xl p-6" style={{ width: '280px' }}>
+              <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
+                <svg className="w-14 h-14 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {item.icon}
+                </svg>
+              </div>
+              <h3 className="text-base font-semibold text-gray-900 mb-2">{item.title}</h3>
+              <p className="text-sm text-gray-600">{item.description}</p>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-center gap-2 mt-6">
+          {utilityItems.map((_, index) => (
+            <div key={index} className="w-2 h-2 rounded-full bg-gray-300"></div>
+          ))}
+        </div>
       </div>
     </section>
   );
