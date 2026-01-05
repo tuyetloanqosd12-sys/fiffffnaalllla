@@ -26,7 +26,8 @@ function HowToUseSection() {
         Playbook for different user types
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Desktop: Grid */}
+      <div className="hidden md:grid md:grid-cols-3 gap-8">
         {groups.map((group, index) => (
           <div key={index} className="card">
             <h3 className="text-base font-semibold text-gray-900 mb-2">{group.title}</h3>
@@ -41,6 +42,32 @@ function HowToUseSection() {
             </ul>
           </div>
         ))}
+      </div>
+
+      {/* Mobile: Horizontal Scroll */}
+      <div className="md:hidden overflow-x-auto pb-4 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide">
+        <div className="flex gap-4" style={{ width: 'max-content' }}>
+          {groups.map((group, index) => (
+            <div key={index} className="card snap-center shrink-0" style={{ width: '300px' }}>
+              <h3 className="text-base font-semibold text-gray-900 mb-2">{group.title}</h3>
+              <p className="text-sm text-gray-600 mb-4">{group.subtitle}</p>
+              <ul className="space-y-2">
+                {group.items.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                    <span className="text-gray-400 mt-0.5">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        {/* Scroll indicator dots */}
+        <div className="flex justify-center gap-2 mt-6">
+          {groups.map((_, index) => (
+            <div key={index} className="w-2 h-2 rounded-full bg-gray-300"></div>
+          ))}
+        </div>
       </div>
     </section>
   );
