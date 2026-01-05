@@ -53,12 +53,13 @@ const StrategyHero = ({ strategyState }) => {
             </p>
           </div>
           
-          <button
-            onClick={scrollToSwap}
-            className="hidden lg:block bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-emerald-600 hover:to-teal-600 shadow-lg hover:shadow-xl transition-all hover:scale-105"
-          >
-            Start Swapping →
-          </button>
+          {/* Text CTA instead of button - swap is visible below */}
+          <div className="hidden lg:flex items-center gap-2 text-emerald-600 font-medium">
+            <span className="text-sm">Swap below</span>
+            <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
         </div>
 
         {/* Key Metrics */}
