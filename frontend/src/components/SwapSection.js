@@ -202,7 +202,7 @@ function SwapSection({ strategyState }) {
                 <button
                   key={value}
                   onClick={() => setSlippage(value)}
-                  className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all ${
+                  className={`px-3 py-1.5 text-xs font-medium rounded-xl transition-all ${
                     slippage === value
                       ? 'bg-gray-900 text-white'
                       : 'bg-white border border-gray-200 text-gray-700 hover:border-gray-400'
@@ -216,7 +216,7 @@ function SwapSection({ strategyState }) {
                   type="number"
                   value={slippage}
                   onChange={(e) => setSlippage(parseFloat(e.target.value) || 0.5)}
-                  className="w-16 px-2 py-1.5 text-xs border border-gray-200 rounded-lg text-center"
+                  className="w-16 px-2 py-1.5 text-xs border border-gray-200 rounded-xl text-center"
                   step="0.1"
                   min="0.1"
                   max="50"
