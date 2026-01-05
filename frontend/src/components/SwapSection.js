@@ -208,7 +208,7 @@ function SwapSection({ strategyState }) {
           <div className="mb-4 p-4 bg-gray-50 rounded-xl border border-gray-200">
             <div className="flex items-center gap-1 mb-2">
               <label className="text-xs font-medium text-gray-700">Slippage Tolerance</label>
-              <Tooltip content="Максимальное изменение цены, которое вы готовы принять. Более высокий slippage увеличивает шансы успешной транзакции, но может привести к худшей цене">
+              <Tooltip content="Maximum price change you're willing to accept. Higher slippage increases transaction success chance but may result in worse price">
                 <svg className="w-3.5 h-3.5 text-gray-400 hover:text-gray-600 cursor-help" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
