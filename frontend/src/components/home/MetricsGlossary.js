@@ -64,12 +64,12 @@ function MetricsGlossary({ strategyState }) {
         </p>
 
         <div className="relative">
-          <div className="overflow-x-auto pb-4 scrollbar-hide">
+          <div className="overflow-x-auto pb-4 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide">
             <div className="flex gap-4" style={{ width: 'max-content' }}>
               {metrics.map((metric, index) => (
                 <div
                   key={index}
-                  className="card bg-white flex-shrink-0"
+                  className="card bg-white flex-shrink-0 snap-center"
                   style={{ width: '280px' }}
                 >
                   <div className="flex items-start gap-3 mb-3">
