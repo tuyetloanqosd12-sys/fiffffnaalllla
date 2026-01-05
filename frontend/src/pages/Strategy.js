@@ -8,6 +8,7 @@ import FloorNFT from '../components/FloorNFT';
 import Holdings from '../components/Holdings';
 import Sales from '../components/Sales';
 import StrategyValueFlow from '../components/StrategyValueFlow';
+import StrategyCTASection from '../components/StrategyCTASection';
 import Footer from '../components/Footer';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
