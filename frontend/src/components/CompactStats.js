@@ -92,7 +92,7 @@ function CompactStats({ strategyState }) {
   return (
     <div className="space-y-4">
       {/* Next NFT Purchase - Full Width */}
-      <div className="bg-white border border-gray-200 rounded-xl p-5 relative overflow-hidden" data-testid="next-nft-purchase">
+      <div className="bg-white border border-gray-200 rounded-xl p-5 relative" data-testid="next-nft-purchase">
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 via-transparent to-teal-50/50 animate-gradient-shift"></div>
         
         <div className="relative z-10">
