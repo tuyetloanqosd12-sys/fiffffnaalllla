@@ -27,7 +27,8 @@ function WhatItDeliversSection() {
           Three key outcomes without promising unrealistic returns
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Desktop: Grid */}
+        <div className="hidden md:grid md:grid-cols-3 gap-8">
           {items.map((item, index) => (
             <div key={index} className="card">
               <div className="w-12 h-12 mb-4 flex items-center justify-center">
@@ -39,6 +40,29 @@ function WhatItDeliversSection() {
               <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
             </div>
           ))}
+        </div>
+
+        {/* Mobile: Horizontal Scroll */}
+        <div className="md:hidden overflow-x-auto pb-4 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide">
+          <div className="flex gap-4" style={{ width: 'max-content' }}>
+            {items.map((item, index) => (
+              <div key={index} className="card snap-center shrink-0" style={{ width: '300px' }}>
+                <div className="w-12 h-12 mb-4 flex items-center justify-center">
+                  <svg className="w-12 h-12 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {item.icon}
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">{item.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          {/* Scroll indicator dots */}
+          <div className="flex justify-center gap-2 mt-6">
+            {items.map((_, index) => (
+              <div key={index} className="w-2 h-2 rounded-full bg-gray-300"></div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
