@@ -18,7 +18,7 @@ function Sales({ strategyState }) {
   return (
     <div className="card animate-fade-in">
       {/* Header with highlighted stats */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
         <div>
           <h3 className="text-2xl font-bold text-gray-900">Sales</h3>
           <p className="text-gray-600 mt-1">
