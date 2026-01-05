@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useWeb3 } from '../context/Web3Context';
 import { ACTIVE_NETWORK, TOKENS, CONTRACTS } from '../config/zkSync';
 import InviteModalSimple from './InviteModalSimple';
+import Tooltip from './Tooltip';
 
 function SwapSection({ strategyState }) {
   const { walletAddress, isCorrectNetwork, connectWallet, switchToZkSync, getBalance } = useWeb3();
