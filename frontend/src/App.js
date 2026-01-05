@@ -10,7 +10,7 @@ import CookieConsent from './components/CookieConsent';
 import CustomCursor from './components/CustomCursor';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('auction');
+  const [currentPage, setCurrentPage] = useState('home');
 
   return (
     <Web3Provider>
