@@ -145,7 +145,7 @@ function CompactStats({ strategyState }) {
       </div>
 
       {/* Token Burn Status - Full Width */}
-      <div className="bg-white border border-gray-200 rounded-xl p-5 relative overflow-hidden" data-testid="token-burn-status">
+      <div className="bg-white border border-gray-200 rounded-xl p-5 relative" data-testid="token-burn-status">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute bottom-0 left-0 right-0 h-28">
             <svg viewBox="0 0 400 100" className="w-full h-full" preserveAspectRatio="none">
