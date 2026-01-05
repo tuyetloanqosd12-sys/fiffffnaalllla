@@ -457,9 +457,15 @@ function SwapSection({ strategyState }) {
                   {(nftSupply.market_circulating || 0).toLocaleString()}
                 </span>
               </div>
+              <div className="flex justify-between items-center pt-3 border-t border-gray-200">
+                <span className="text-xs text-gray-600">Strategy Owned</span>
+                <span className="text-sm font-semibold text-gray-900">
+                  {(nftSupply.strategy_owned || 0).toLocaleString()}
+                </span>
+              </div>
               <div className="flex justify-between items-center">
                 <span className="text-xs text-gray-600">Burned</span>
-                <span className="text-sm font-semibold text-gray-900">
+                <span className="text-sm font-bold text-orange-600">
                   {(nftSupply.burned || 0).toLocaleString()}
                 </span>
               </div>
