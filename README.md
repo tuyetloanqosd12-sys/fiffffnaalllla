@@ -1,189 +1,176 @@
-# FOMO NFT Auction Platform
+# FOMO Strategy - NFT Auction & Buyback Platform
 
-![FOMO Auction](https://img.shields.io/badge/Status-Active-brightgreen) ![React](https://img.shields.io/badge/React-18.x-blue) ![FastAPI](https://img.shields.io/badge/FastAPI-0.110-green) ![MongoDB](https://img.shields.io/badge/MongoDB-7.0-green)
+![FOMO Platform](https://img.shields.io/badge/Status-Active-emerald) ![React](https://img.shields.io/badge/React-18.x-blue) ![FastAPI](https://img.shields.io/badge/FastAPI-Python-green) ![MongoDB](https://img.shields.io/badge/MongoDB-Database-brightgreen)
 
-Полнофункциональная платформа для проведения NFT аукционов с механикой blind bidding, гамификацией и системой прогрессии пользователей.
+A sophisticated NFT auction platform integrated with an automated buyback & burn strategy. Users can participate in blind auctions for unique NFTs that are designed to appreciate in value over time through the perpetual buyback mechanism.
 
-## 🌟 Основные возможности
+## 🎯 Overview
 
-### Аукцион
-- **Blind Bidding** — скрытые ставки до окончания аукциона
-- **4,444 уникальных NFT** с 5 уровнями редкости
-- **Таймер обратного отсчёта** с визуальными эффектами
-- **Real-time уведомления** о новых ставках
-- **Last Hero механика** — последние 3 ставки получают бонусы
+FOMO Strategy combines two powerful mechanisms:
+1. **NFT Auction** - Blind bidding system for 4,444 unique NFTs with gamification
+2. **Buyback & Burn Strategy** - Automated treasury management that continuously buys back and burns NFTs, creating perpetual price growth
 
-### NFT Коллекции
-- **Pre-Mint BOX Collection** — 666 эксклюзивных боксов
-- **Main Collection** — 4,444 NFT с XP мультипликаторами
-- **Box Fusion** — объединение боксов для создания NFT
-- **Hidden NFT** — секретный слой коллекции
-- **Singularity NFT** — максимум 33 в существовании
+## ✨ Features
 
-### Гамификация
-- **FOMO Score** — система прогрессии с 6 уровнями
-- **Бейджи достижений** — коллекционирование наград
-- **XP мультипликаторы** — бонусы за редкость NFT
-- **OG Trailblazer** — статус первых 100 участников
+### Auction Page
+- **Live Auction Interface** - Real-time bidding with countdown timer
+- **Place Bid Panel** - Minimalist design with bid bonuses (Higher Bid, Early Bidder)
+- **Gamification Mechanics** - XP rewards, rarity tiers, leaderboards
+- **Strategy Value Section** - Educational block explaining NFT value growth
+- **NFT Box Collection** - Pre-mint box showcase with horizontal scroll
+- **Live Activity Feed** - Real-time bid notifications and stats
 
-## 🚀 Быстрый старт
+### Strategy Page (Enter App)
+- **Treasury Dashboard** - Live treasury balance and metrics
+- **Buyback Mechanism** - Visual explanation of the buyback flow
+- **Token Swap Interface** - Integrated swap functionality
+- **Performance Charts** - Historical data visualization
 
-### Требования
-- Node.js 18+
-- Python 3.11+
-- MongoDB 7.0+
-- yarn
+### Home Page (About)
+- **FOMO Strategy Explanation** - Detailed breakdown of how the system works
+- **How It Works** - Step-by-step guide
+- **FAQ Section** - Common questions answered
+- **Trust Indicators** - Security and verification badges
 
-### Установка
-
-```bash
-# Клонирование репозитория
-git clone https://github.com/your-repo/fomo-auction.git
-cd fomo-auction
-
-# Backend
-cd backend
-pip install -r requirements.txt
-cp .env.example .env  # Настройте переменные окружения
-
-# Frontend
-cd ../frontend
-yarn install
-cp .env.example .env  # Настройте переменные окружения
-```
-
-### Запуск в development режиме
-
-```bash
-# Terminal 1 - Backend
-cd backend
-uvicorn server:app --host 0.0.0.0 --port 8001 --reload
-
-# Terminal 2 - Frontend
-cd frontend
-yarn start
-```
-
-Приложение будет доступно:
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:8001/api
-
-## 📁 Структура проекта
+## 🏗️ Project Structure
 
 ```
 /app
-├── backend/                    # FastAPI Backend
-│   ├── server.py              # Главный файл сервера
-│   ├── requirements.txt       # Python зависимости
-│   └── .env                   # Переменные окружения
-│
-├── frontend/                   # React Frontend
+├── frontend/                    # React Frontend
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── auction/       # Компоненты аукциона (21 файл)
-│   │   │   ├── home/          # Компоненты главной страницы
-│   │   │   └── ui/            # Shadcn UI компоненты
+│   │   │   ├── auction/         # Auction page components
+│   │   │   │   ├── PlaceBidPanel.js        # Main bid interface
+│   │   │   │   ├── StrategyValueSection.js # NEW: Strategy explanation
+│   │   │   │   ├── AuctionHeroSection.js   # Hero with timer
+│   │   │   │   ├── AuctionChart.js         # Price/activity chart
+│   │   │   │   ├── GamificationMechanics.js
+│   │   │   │   ├── TopBidders.js
+│   │   │   │   ├── LiveActivity.js
+│   │   │   │   ├── RecentActivity.js
+│   │   │   │   ├── HowAuctionWorks.js
+│   │   │   │   ├── RaritySection.js
+│   │   │   │   ├── NFTBoxCollectionSection.js
+│   │   │   │   ├── NFTUtilitySection.js
+│   │   │   │   ├── UserEvolutionSection.js
+│   │   │   │   ├── FOMOUniverseSection.js
+│   │   │   │   ├── LastChanceSection.js
+│   │   │   │   ├── AuctionCTASection.js
+│   │   │   │   ├── BidModal.js
+│   │   │   │   ├── ActivityHintToast.js
+│   │   │   │   └── index.js
+│   │   │   ├── home/            # Home/About page components
+│   │   │   │   ├── HeroSection.js
+│   │   │   │   ├── WhatIsStrategySection.js
+│   │   │   │   ├── HowItWorksSection.js
+│   │   │   │   ├── WhatItDeliversSection.js
+│   │   │   │   ├── ScenariosSection.js
+│   │   │   │   ├── FAQSection.js
+│   │   │   │   ├── CTASection.js
+│   │   │   │   └── index.js
+│   │   │   ├── strategy/        # Strategy page components
+│   │   │   │   ├── DonutChart.js
+│   │   │   │   ├── StrategyPressure.js
+│   │   │   │   ├── FlowSteps.js
+│   │   │   │   └── index.js
+│   │   │   ├── ui/              # Shadcn UI components
+│   │   │   ├── Header.js
+│   │   │   ├── Footer.js
+│   │   │   ├── Tooltip.js
+│   │   │   ├── CookieConsent.js
+│   │   │   ├── FloatingShapes.js
+│   │   │   └── ...
 │   │   ├── pages/
-│   │   │   ├── Auction.js     # Страница аукциона
-│   │   │   └── Home.js        # Главная страница
-│   │   ├── utils/             # Утилиты
-│   │   └── App.js             # Корневой компонент
-│   ├── package.json           # Node зависимости
-│   └── .env                   # Переменные окружения
+│   │   │   ├── Auction.js       # Main auction page
+│   │   │   ├── Strategy.js      # Strategy dashboard
+│   │   │   └── Home.js          # About/Info page
+│   │   ├── context/
+│   │   │   └── Web3Context.js   # Web3 wallet integration
+│   │   ├── App.js               # Main app with routing
+│   │   ├── App.css
+│   │   └── index.js
+│   ├── public/
+│   ├── package.json
+│   └── tailwind.config.js
 │
-├── docs/                       # Документация
-│   ├── ARCHITECTURE.md        # Архитектура проекта
-│   ├── COMPONENTS.md          # Описание компонентов
-│   ├── API.md                 # API документация
-│   └── STYLE_GUIDE.md         # Гайд по стилям
+├── backend/                     # FastAPI Backend
+│   ├── server.py                # Main API server
+│   ├── requirements.txt
+│   └── .env
 │
-└── README.md                   # Этот файл
+├── README.md
+├── QUICKSTART.md
+└── CHANGELOG.md
 ```
 
-## 🔧 Технологический стек
+## 🚀 Recent Updates (v2.0)
 
-### Frontend
-- **React 18** — UI библиотека
-- **TailwindCSS** — Стилизация
-- **Shadcn/ui** — UI компоненты
-- **Framer Motion** — Анимации
-- **Web3.js** — Взаимодействие с блокчейном
-- **Dynamic Labs SDK** — Web3 аутентификация
+### PlaceBidPanel Redesign
+- Minimalist gray color palette with single emerald accent
+- Two-column bonus layout (Higher Bid ⭐ / Early Bidder ⏱)
+- Integrated minimum bid hint in button
+- Stats section below button (Total Bids / Participants)
 
-### Backend
-- **FastAPI** — Веб-фреймворк
-- **Motor** — Async MongoDB драйвер
-- **Pydantic** — Валидация данных
-- **PyJWT** — JWT токены
-- **Web3.py** — Ethereum взаимодействие
+### New: Strategy Value Section
+- Educational block explaining NFT value appreciation
+- 4-step animated flow with custom SVG icons:
+  1. You Buy NFT → 2. Strategy Works → 3. Buyback & Burn → 4. Floor Rises
+- Dark stats block (Perpetual Buyback / Decreasing Supply / Rising Floor)
+- Navigation link to About page
 
-### База данных
-- **MongoDB** — NoSQL хранилище
+### Navigation System
+- Global navigation via custom events
+- Smooth scroll on page transitions
+- Cross-component communication
 
-## 📖 Документация
+## 🛠️ Tech Stack
 
-- [Архитектура](./docs/ARCHITECTURE.md)
-- [Компоненты](./docs/COMPONENTS.md)
-- [API Reference](./docs/API.md)
-- [Style Guide](./docs/STYLE_GUIDE.md)
-- [Быстрый старт](./docs/QUICKSTART.md)
+| Layer | Technology |
+|-------|------------|
+| Frontend | React 18, TailwindCSS, Framer Motion |
+| Backend | FastAPI (Python) |
+| Database | MongoDB |
+| UI Components | Shadcn/ui |
+| Animations | Framer Motion |
+| Icons | Custom SVG, Heroicons |
 
-## 🎨 Страницы
+## 📱 Mobile Responsive
 
-### Home (`/`)
-- Hero секция с призывом к действию
-- Описание платформы и возможностей
-- NFT Utility секция
-- CTA секция
+All pages are optimized for mobile with:
+- Horizontal scroll for card sections
+- Adaptive grid layouts
+- Touch-friendly interactions
+- Scroll snap for carousels
 
-### Auction (`/auction`)
-- Hero секция с таймером
-- Основной грид с графиком и панелью ставок
-- Last Chance — Last Hero секция
-- Pre-Mint BOX Collection
-- Why Own FOMO NFTs
-- FOMO Score Progression
-- FOMO Universe
-- Финальный CTA
+## 🎨 Design System
 
-## 🔐 Переменные окружения
+### Colors
+- **Primary**: Gray scale (gray-50 to gray-900)
+- **Accent**: Emerald (emerald-400 to emerald-600)
+- **Text**: gray-900 (headings), gray-500 (body)
 
-### Backend (.env)
-```env
-MONGO_URL=mongodb://localhost:27017
-DB_NAME=fomo_auction
-SECRET_KEY=your-secret-key
-```
+### Typography
+- **Headings**: Bold, text-3xl to text-4xl
+- **Body**: Regular, text-sm to text-base
+- **Labels**: Semibold, text-xs uppercase
 
-### Frontend (.env)
-```env
-REACT_APP_BACKEND_URL=http://localhost:8001
-```
+### Components
+- Rounded corners: rounded-xl to rounded-2xl
+- Shadows: shadow-sm to shadow-lg
+- Borders: border-gray-100 to border-gray-200
 
-## 📝 TODO / Roadmap
+## 📄 License
 
-- [ ] Интеграция с реальным блокчейном
-- [ ] Система оплаты USDC
-- [ ] Пользовательские профили
-- [ ] История ставок
-- [ ] Административная панель
-- [ ] Email уведомления
-- [ ] Мобильная версия
+MIT License - see LICENSE file for details.
 
-## 🤝 Вклад в проект
+## 🤝 Contributing
 
-1. Fork репозитория
-2. Создайте feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit изменения (`git commit -m 'Add amazing feature'`)
-4. Push в branch (`git push origin feature/amazing-feature`)
-5. Откройте Pull Request
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
 
-## 📄 Лицензия
+---
 
-MIT License — см. [LICENSE](LICENSE) файл.
-
-## 📞 Контакты
-
-- Website: [fomo.cx](https://www.fomo.cx)
-- Twitter: [@fomo_nft](https://x.com)
-- Discord: [FOMO Community](https://discord.gg)
+Built with ❤️ by FOMO Team

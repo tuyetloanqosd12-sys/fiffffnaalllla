@@ -1,78 +1,74 @@
-# FOMO Auction — Изменения
+# Changelog
 
-Все значимые изменения в проекте документируются в этом файле.
+All notable changes to FOMO Strategy platform.
 
-## [1.0.0] - 2026-01-05
+## [2.0.0] - 2026-01-05
 
-### Добавлено
+### Added
 
-#### Страница Auction
-- **AuctionHeroSection** — главный баннер с таймером и CTA
-- **AuctionCTASection** — финальный призыв к действию
-- **LastChanceSection** — секция "Last Hero"
-- **NFTBoxCollectionSection** — карусель Pre-Mint BOX
-- **NFTUtilitySection** — описание utility NFT
-- **UserEvolutionSection** — FOMO Score прогрессия
-- **FOMOUniverseSection** — экосистема FOMO
-- **BidModal** — модальное окно ставки
-- **ActivityHintToast** — toast уведомления
+#### New Components
+- **StrategyValueSection** (`/components/auction/StrategyValueSection.js`)
+  - Educational section explaining NFT value growth through buyback mechanism
+  - 4-step animated flow: Buy NFT → Strategy Works → Buyback & Burn → Floor Rises
+  - Custom SVG icons in gray palette (target, clock, flame, chart)
+  - Dark stats block with key metrics
+  - Navigation link to About page
 
-#### Компоненты Auction
-- AuctionChart с OG Trailblazer бейджем
-- PlaceBidPanel
-- GamificationMechanics
-- TopBidders с Hidden Rankings
-- LiveActivity
-- RecentActivity
-- HowAuctionWorks
-- RaritySection с Blind Mode
-- CollectionOverview
+#### Navigation System
+- Global navigation via `window.dispatchEvent` custom events
+- `navigateTo` event listener in App.js
+- Smooth scroll on page transitions
 
-#### Страница Home
-- HeroSection
-- Features
-- NFTUtility
-- CTASection
+### Changed
 
-#### Общее
-- Header с навигацией
-- Footer
-- CookieConsent
-- Holdings компонент
-- Web3Provider
+#### PlaceBidPanel Redesign
+- **Before**: Colorful "rainbow" design with multiple accent colors
+- **After**: Minimalist gray palette with single emerald accent
 
-#### Backend API
-- GET /api/ — health check
-- GET /api/treasury — данные казначейства
-- GET /api/auction-stats — статистика аукциона
+**New Features:**
+- Two-column bonus layout (Higher Bid / Early Bidder)
+- Emoji icons (⭐ / ⏱) instead of colored SVGs
+- Minimum bid integrated into button text: "Place Bid (min 100 USDC)"
+- Stats section below button with large numbers:
+  - Total Bids (left)
+  - Participants (right)
+  - Vertical divider between stats
 
-#### Документация
-- README.md
-- docs/QUICKSTART.md
-- docs/ARCHITECTURE.md
-- docs/COMPONENTS.md
-- docs/API.md
-- docs/STYLE_GUIDE.md
+#### File Changes
+- `App.js` - Added useEffect for navigation events
+- `auction/index.js` - Added StrategyValueSection export
+- `Auction.js` - Integrated StrategyValueSection after LastChanceSection
 
-### Рефакторинг
-- Вынесены все встроенные компоненты из Auction.js в отдельные файлы
-- Auction.js: 665 → 202 строки
-- Создан barrel export в components/auction/index.js
+### Design Guidelines Established
 
-### Изменено
-- Убрана статистика из Hero Section
-- Исправлен шрифт таймера в CTA
-- Порядок секций: Last Hero → NFT Box Collection
+#### Color Palette
+- Primary: Gray scale (gray-50 to gray-900)
+- Accent: Emerald (emerald-400, emerald-500, emerald-600)
+- Avoid: Multi-color designs, rainbow effects
 
-## Планируется
+#### Icons
+- Use custom SVG icons
+- Gray fill/stroke colors
+- NO emoji in main UI (except small indicators)
+- Rounded shapes preferred
 
-### [1.1.0]
-- Интеграция с реальным блокчейном
-- Система оплаты USDC
-- Пользовательские профили
-- История ставок
+#### Layout
+- Rounded corners: rounded-xl, rounded-2xl
+- Subtle shadows: shadow-sm
+- Border: border-gray-100, border-gray-200
 
-### [1.2.0]
-- WebSocket для real-time обновлений
-- Административная панель
-- Email уведомления
+---
+
+## [1.x.x] - Previous Versions
+
+### Features Implemented
+- Auction page with bidding system
+- Strategy page with treasury dashboard
+- Home/About page with explanations
+- Mobile responsive design
+- Tooltip system
+- Cookie consent
+- NFT Box Collection section
+- Gamification mechanics
+- Live activity feed
+- Top bidders leaderboard
