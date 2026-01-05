@@ -91,7 +91,7 @@ const StrategyHero = ({ strategyState }) => {
             <div className="flex items-start justify-between mb-2">
               <span className="text-sm text-gray-600 font-medium flex items-center gap-1">
                 NFTs Burned
-                <Tooltip content="Number of NFTs permanently removed from circulation. Burning reduces supply and increases value of remaining NFTs">
+                <Tooltip content="Number of NFTs permanently removed from circulation. Burning reduces supply and increases value of remaining NFTs" position="bottom" maxWidth="400px">
                   <svg className="w-4 h-4 text-gray-400 hover:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
