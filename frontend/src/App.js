@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Web3Provider } from './context/Web3Context';
 import Header from './components/Header';
@@ -11,6 +11,16 @@ import CustomCursor from './components/CustomCursor';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+
+  // Listen for navigation events from child components
+  useEffect(() => {
+    const handleNavigate = (e) => {
+      setCurrentPage(e.detail);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    window.addEventListener('navigateTo', handleNavigate);
+    return () => window.removeEventListener('navigateTo', handleNavigate);
+  }, []);
 
   return (
     <Web3Provider>
