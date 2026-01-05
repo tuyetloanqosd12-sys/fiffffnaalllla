@@ -411,6 +411,17 @@ function SwapSection({ strategyState }) {
             </svg>
           </a>
         </div>
+
+        {/* Fee Distribution Info */}
+        <div className="mt-3 px-3 py-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100/50">
+          <p className="text-xs text-gray-600 leading-relaxed">
+            <span className="font-semibold text-gray-900">Fee Distribution:</span> 10% swap fee fuels the ecosystem — 
+            <span className="text-emerald-700 font-medium"> 40%</span> NFT buybacks, 
+            <span className="text-emerald-700 font-medium"> 30%</span> token burns, 
+            <span className="text-emerald-700 font-medium"> 20%</span> liquidity, 
+            <span className="text-emerald-700 font-medium"> 10%</span> development.
+          </p>
+        </div>
       </div>
 
       {/* Activity Stats & Supply Info - Combined */}
