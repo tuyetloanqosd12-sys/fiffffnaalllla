@@ -15,7 +15,8 @@ function ScenariosSection() {
           Clear examples instead of complex calculator
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Desktop: Grid */}
+        <div className="hidden md:grid md:grid-cols-3 gap-8">
           {scenarios.map((scenario, index) => (
             <div key={index} className="card">
               <h3 className="text-base font-semibold text-gray-900 mb-3">{scenario.mode}</h3>
@@ -30,6 +31,31 @@ function ScenariosSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Mobile: Horizontal Scroll */}
+        <div className="md:hidden overflow-x-auto pb-4 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide">
+          <div className="flex gap-4" style={{ width: 'max-content' }}>
+            {scenarios.map((scenario, index) => (
+              <div key={index} className="card snap-center shrink-0" style={{ width: '300px' }}>
+                <h3 className="text-base font-semibold text-gray-900 mb-3">{scenario.mode}</h3>
+                <div className="space-y-2 mb-4">
+                  {scenario.items.map((item, i) => (
+                    <div key={i} className="text-sm text-gray-600">→ {item}</div>
+                  ))}
+                </div>
+                <div className="inline-flex items-center gap-2 text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                  <div className={`w-2 h-2 bg-${scenario.color}-400 rounded-full animate-pulse`}></div>
+                  {scenario.mode.split(' ')[0]} mode
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center gap-2 mt-6">
+            {scenarios.map((_, index) => (
+              <div key={index} className="w-2 h-2 rounded-full bg-gray-300"></div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
