@@ -161,6 +161,9 @@ function Auction() {
           onPlaceBid={handlePlaceBid}
         />
 
+        {/* Strategy Value Explanation - Why NFTs grow in value */}
+        <StrategyValueSection />
+
         {/* NFT Box Collection Section */}
         <NFTBoxCollectionSection />
 
