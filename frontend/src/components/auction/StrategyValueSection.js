@@ -160,14 +160,10 @@ const StrategyValueSection = () => {
 
       {/* Learn More Link */}
       <div className="text-center mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { 
-            e.preventDefault(); 
-            // Navigate to Home/About page
-            const enterAppLink = document.querySelector('[data-page="home"]') || document.querySelector('nav button:first-child') || document.querySelector('text=Enter App');
-            if (enterAppLink) enterAppLink.click();
-            else window.scrollTo({ top: 0, behavior: 'smooth' });
+        <button 
+          onClick={() => { 
+            // Dispatch custom event to navigate to home page
+            window.dispatchEvent(new CustomEvent('navigateTo', { detail: 'home' }));
           }}
           className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 font-medium transition-colors"
         >
@@ -175,7 +171,7 @@ const StrategyValueSection = () => {
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </a>
+        </button>
       </div>
     </section>
   );
