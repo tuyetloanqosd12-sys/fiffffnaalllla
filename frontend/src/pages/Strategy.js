@@ -92,6 +92,9 @@ function Strategy() {
       </div>
       
       <div className="max-w-7xl mx-auto px-6 py-8 relative z-10">
+        {/* Hero Section */}
+        <StrategyHero strategyState={strategyState} />
+
         {/* Main Grid: Chart + Stats Left, Swap + Floor NFT Right */}
         <div className="grid grid-cols-3 gap-6">
           {/* Left Column: Chart + Stats (2/3 width) */}
