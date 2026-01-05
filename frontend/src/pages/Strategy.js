@@ -122,6 +122,9 @@ function Strategy() {
         </div>
       </div>
       
+      {/* CTA Section */}
+      <StrategyCTASection />
+      
       <Footer />
     </div>
   );
