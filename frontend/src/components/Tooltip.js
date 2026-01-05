@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Tooltip = ({ children, content, position = 'top' }) => {
+const Tooltip = ({ children, content, position = 'top', maxWidth = '280px' }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const positionClasses = {
@@ -11,10 +11,10 @@ const Tooltip = ({ children, content, position = 'top' }) => {
   };
 
   const arrowClasses = {
-    top: 'top-full left-1/2 -translate-x-1/2 border-l-transparent border-r-transparent border-b-transparent border-t-gray-900',
-    bottom: 'bottom-full left-1/2 -translate-x-1/2 border-l-transparent border-r-transparent border-t-transparent border-b-gray-900',
-    left: 'left-full top-1/2 -translate-y-1/2 border-t-transparent border-b-transparent border-r-transparent border-l-gray-900',
-    right: 'right-full top-1/2 -translate-y-1/2 border-t-transparent border-b-transparent border-l-transparent border-r-gray-900',
+    top: 'top-full left-1/2 -translate-x-1/2 border-l-transparent border-r-transparent border-b-transparent border-t-gray-800',
+    bottom: 'bottom-full left-1/2 -translate-x-1/2 border-l-transparent border-r-transparent border-t-transparent border-b-gray-800',
+    left: 'left-full top-1/2 -translate-y-1/2 border-t-transparent border-b-transparent border-r-transparent border-l-gray-800',
+    right: 'right-full top-1/2 -translate-y-1/2 border-t-transparent border-b-transparent border-l-transparent border-r-gray-800',
   };
 
   return (
@@ -30,7 +30,10 @@ const Tooltip = ({ children, content, position = 'top' }) => {
       
       {isVisible && (
         <div className={`absolute z-50 ${positionClasses[position]} pointer-events-none`}>
-          <div className="bg-gray-900 text-white text-xs rounded-lg px-3 py-2 max-w-xs shadow-xl">
+          <div 
+            className="bg-gray-800 text-white text-xs leading-relaxed rounded-2xl px-4 py-3 shadow-2xl"
+            style={{ maxWidth }}
+          >
             {content}
           </div>
           <div className={`absolute w-0 h-0 border-4 ${arrowClasses[position]}`}></div>
