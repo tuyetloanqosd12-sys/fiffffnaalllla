@@ -18,4 +18,4 @@ export { default as NFTUtilitySection } from './NFTUtilitySection';
 export { default as BidModal } from './BidModal';
 export { default as ActivityHintToast } from './ActivityHintToast';
 export { default as NFTBoxCollectionSection } from './NFTBoxCollectionSection';
-
+export { default as StrategyValueSection } from './StrategyValueSection';
