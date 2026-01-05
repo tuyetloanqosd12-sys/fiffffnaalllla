@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import StrategyHero from '../components/StrategyHero';
 import ChartSection from '../components/ChartSection';
 import CompactStats from '../components/CompactStats';
 import StrategyCalculator from '../components/StrategyCalculator';
