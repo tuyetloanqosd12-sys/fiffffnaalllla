@@ -162,7 +162,13 @@ const StrategyValueSection = () => {
       <div className="text-center mt-8">
         <a 
           href="#" 
-          onClick={(e) => { e.preventDefault(); document.querySelector('[data-page="strategy"]')?.click(); }}
+          onClick={(e) => { 
+            e.preventDefault(); 
+            // Navigate to Home/About page
+            const enterAppLink = document.querySelector('[data-page="home"]') || document.querySelector('nav button:first-child') || document.querySelector('text=Enter App');
+            if (enterAppLink) enterAppLink.click();
+            else window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
           className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 font-medium transition-colors"
         >
           Learn more about FOMO Strategy
