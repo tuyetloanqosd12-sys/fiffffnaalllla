@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Tooltip from './Tooltip';
 
 function CompactStats({ strategyState }) {
   const [animatedBurned, setAnimatedBurned] = useState(0);
