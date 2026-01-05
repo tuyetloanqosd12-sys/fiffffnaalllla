@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Tooltip = ({ children, content, position = 'top', maxWidth = '340px' }) => {
+const Tooltip = ({ children, content, position = 'top', maxWidth = '240px' }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const positionClasses = {
@@ -31,8 +31,8 @@ const Tooltip = ({ children, content, position = 'top', maxWidth = '340px' }) =>
       {isVisible && (
         <div className={`absolute z-50 ${positionClasses[position]} pointer-events-none`}>
           <div 
-            className="bg-gray-800 text-white text-xs leading-relaxed rounded-2xl px-4 py-3 shadow-2xl whitespace-nowrap"
-            style={{ maxWidth }}
+            className="bg-gray-800 text-white text-xs leading-relaxed rounded-2xl px-4 py-3 shadow-2xl"
+            style={{ maxWidth, minWidth: '200px' }}
           >
             {content}
           </div>
