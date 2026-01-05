@@ -2,60 +2,80 @@ import React from 'react';
 
 const PlaceBidPanel = ({ currentBid, totalBids, participants, onPlaceBid }) => {
   return (
-    <div className="card">
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-gray-900">Place Your Bid</h3>
-        <div className="flex items-center gap-2 px-2 py-1 bg-emerald-50 rounded-full border border-emerald-200">
-          <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-          <span className="text-xs font-semibold text-emerald-600">LIVE</span>
+    <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-5">
+        <h3 className="text-lg font-bold text-gray-900">Place Your Bid</h3>
+        <div className="flex items-center gap-1.5 px-2.5 py-1 bg-gray-900 rounded-full">
+          <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></div>
+          <span className="text-[10px] font-bold text-white tracking-wide">LIVE</span>
         </div>
       </div>
       
-      <div className="space-y-3">
-        {/* Current Bid - Clean and prominent */}
-        <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
-          <p className="text-xs text-gray-600 mb-1 font-medium">Current Highest Bid</p>
-          <p className="text-3xl font-bold text-gray-900">{currentBid} <span className="text-lg text-gray-600">USDC</span></p>
+      {/* Current Bid */}
+      <div className="mb-4">
+        <p className="text-xs text-gray-500 mb-1">Current Highest Bid</p>
+        <div className="flex items-baseline gap-2">
+          <span className="text-4xl font-bold text-gray-900">{currentBid}</span>
+          <span className="text-sm font-medium text-gray-400">USDC</span>
         </div>
-        
-        {/* Bid Incentives - Clean cards */}
-        <div className="grid grid-cols-2 gap-2">
-          <div className="p-3 bg-white border-2 border-gray-200 rounded-xl hover:border-gray-300 transition-colors">
-            <div className="flex items-center gap-1.5 mb-1">
-              <svg className="w-4 h-4 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <span className="text-xs font-bold text-gray-900">Higher Bid</span>
-            </div>
-            <p className="text-xs text-gray-600">More XP & Rewards</p>
-          </div>
-          
-          <div className="p-3 bg-white border-2 border-gray-200 rounded-xl hover:border-gray-300 transition-colors">
-            <div className="flex items-center gap-1.5 mb-1">
-              <svg className="w-4 h-4 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-              </svg>
-              <span className="text-xs font-bold text-gray-900">Early Bidder</span>
-            </div>
-            <p className="text-xs text-gray-600">Time Bonus Boost</p>
-          </div>
-        </div>
-        
-        {/* Minimum Bid - Compact */}
-        <div className="flex items-center justify-between px-3 py-2 bg-emerald-50 rounded-xl border border-emerald-200">
-          <span className="text-xs text-gray-700 font-medium">Minimum Bid</span>
-          <span className="text-sm font-bold text-emerald-600">100 USDC</span>
-        </div>
-        
-        {/* Place Bid Button - Clean and bold */}
-        <button 
-          onClick={onPlaceBid}
-          className="w-full bg-gray-900 text-white py-4 rounded-xl font-semibold text-base hover:bg-black transition-all shadow-lg hover:shadow-xl"
-          data-testid="place-bid-btn"
-        >
-          Place Bid
-        </button>
       </div>
+
+      {/* Stats row */}
+      <div className="flex items-center gap-4 mb-4 pb-4 border-b border-gray-100">
+        <div className="flex items-center gap-1.5">
+          <div className="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
+          <span className="text-xs text-gray-500"><span className="font-semibold text-gray-700">{totalBids}</span> bids</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <div className="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
+          <span className="text-xs text-gray-500"><span className="font-semibold text-gray-700">{participants}</span> participants</span>
+        </div>
+      </div>
+
+      {/* Bonus Section - Elegant and subtle */}
+      <div className="space-y-2 mb-4">
+        <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Bid Bonuses</p>
+        
+        <div className="flex items-center justify-between py-2 px-3 bg-gray-50 rounded-lg">
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-md bg-gray-200 flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+              </svg>
+            </div>
+            <span className="text-xs font-medium text-gray-700">Hidden Bid</span>
+          </div>
+          <span className="text-[10px] font-semibold text-gray-500 bg-gray-200 px-2 py-0.5 rounded">+15% XP</span>
+        </div>
+
+        <div className="flex items-center justify-between py-2 px-3 bg-gray-50 rounded-lg">
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-md bg-gray-200 flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <span className="text-xs font-medium text-gray-700">Early Bird</span>
+          </div>
+          <span className="text-[10px] font-semibold text-gray-500 bg-gray-200 px-2 py-0.5 rounded">+10% XP</span>
+        </div>
+      </div>
+
+      {/* Minimum Bid */}
+      <div className="flex items-center justify-between py-2.5 px-3 mb-4 bg-gray-900 rounded-lg">
+        <span className="text-xs text-gray-400">Min. Bid</span>
+        <span className="text-sm font-bold text-white">100 USDC</span>
+      </div>
+      
+      {/* Place Bid Button */}
+      <button 
+        onClick={onPlaceBid}
+        className="w-full bg-emerald-500 text-white py-3.5 rounded-xl font-semibold text-sm hover:bg-emerald-600 transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
+        data-testid="place-bid-btn"
+      >
+        Place Bid
+      </button>
     </div>
   );
 };
