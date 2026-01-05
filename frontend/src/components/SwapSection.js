@@ -206,7 +206,14 @@ function SwapSection({ strategyState }) {
         {/* Settings Panel */}
         {showSettings && (
           <div className="mb-4 p-4 bg-gray-50 rounded-xl border border-gray-200">
-            <label className="text-xs font-medium text-gray-700 block mb-2">Slippage Tolerance</label>
+            <div className="flex items-center gap-1 mb-2">
+              <label className="text-xs font-medium text-gray-700">Slippage Tolerance</label>
+              <Tooltip content="Максимальное изменение цены, которое вы готовы принять. Более высокий slippage увеличивает шансы успешной транзакции, но может привести к худшей цене">
+                <svg className="w-3.5 h-3.5 text-gray-400 hover:text-gray-600 cursor-help" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </Tooltip>
+            </div>
             <div className="flex items-center gap-2">
               {[0.1, 0.5, 1.0].map((value) => (
                 <button
