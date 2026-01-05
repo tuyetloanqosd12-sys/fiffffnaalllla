@@ -18,7 +18,8 @@ import {
   NFTUtilitySection,
   BidModal,
   ActivityHintToast,
-  NFTBoxCollectionSection
+  NFTBoxCollectionSection,
+  StrategyValueSection
 } from '../components/auction';
 
 function Auction() {
