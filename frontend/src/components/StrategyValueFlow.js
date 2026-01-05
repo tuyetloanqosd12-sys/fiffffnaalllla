@@ -69,14 +69,16 @@ function StrategyValueFlow({ strategyState }) {
         </div>
       </div>
 
-      {/* Main Content - Two Columns */}
-      <div className="flex gap-8">
+      {/* Main Content - Two Columns on Desktop, Stack on Mobile */}
+      <div className="flex flex-col lg:flex-row gap-8">
         {/* Left: Donut Chart */}
-        <DonutChart 
-          segments={segments} 
-          activeSegment={activeSegment} 
-          setActiveSegment={setActiveSegment} 
-        />
+        <div className="lg:w-auto flex justify-center lg:justify-start">
+          <DonutChart 
+            segments={segments} 
+            activeSegment={activeSegment} 
+            setActiveSegment={setActiveSegment} 
+          />
+        </div>
 
         {/* Right: Flow + Metrics */}
         <div className="flex-1 space-y-4">
