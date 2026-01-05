@@ -200,3 +200,6 @@ const RaritySection = ({ timeLeft }) => {
       </div>
     </>
   );
+};
+
+export default RaritySection;
