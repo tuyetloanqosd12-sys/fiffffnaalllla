@@ -46,11 +46,17 @@ const PlaceBidPanel = ({ currentBid, totalBids, participants, onPlaceBid }) => {
         Place Bid <span className="text-gray-400 font-normal">(min 100 USDC)</span>
       </button>
 
-      {/* Stats under button */}
-      <div className="flex items-center justify-center gap-4 mt-3 text-xs text-gray-400">
-        <span><span className="font-semibold text-gray-600">{totalBids}</span> bids</span>
-        <span>•</span>
-        <span><span className="font-semibold text-gray-600">{participants}</span> participants</span>
+      {/* Stats under button - wider and more prominent */}
+      <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+        <div className="text-center flex-1">
+          <p className="text-xl font-bold text-gray-900">{totalBids}</p>
+          <p className="text-xs text-gray-400">Total Bids</p>
+        </div>
+        <div className="w-px h-8 bg-gray-200"></div>
+        <div className="text-center flex-1">
+          <p className="text-xl font-bold text-gray-900">{participants}</p>
+          <p className="text-xs text-gray-400">Participants</p>
+        </div>
       </div>
     </div>
   );
