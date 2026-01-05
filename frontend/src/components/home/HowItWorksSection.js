@@ -31,7 +31,8 @@ function HowItWorksSection() {
         Four simple steps that transform trading activity into ecosystem support
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      {/* Desktop: Grid */}
+      <div className="hidden md:grid md:grid-cols-4 gap-6">
         {steps.map((step, index) => (
           <div key={index} className="card text-center hover:border-gray-300 transition-all">
             <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
@@ -43,6 +44,29 @@ function HowItWorksSection() {
             <p className="text-sm text-gray-600">{step.desc}</p>
           </div>
         ))}
+      </div>
+
+      {/* Mobile: Horizontal Scroll */}
+      <div className="md:hidden overflow-x-auto pb-4 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide">
+        <div className="flex gap-4" style={{ width: 'max-content' }}>
+          {steps.map((step, index) => (
+            <div key={index} className="card text-center snap-center shrink-0" style={{ width: '280px' }}>
+              <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
+                <svg className="w-14 h-14 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {step.icon}
+                </svg>
+              </div>
+              <h3 className="text-base font-semibold mb-2 text-gray-900">{step.title}</h3>
+              <p className="text-sm text-gray-600">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+        {/* Scroll indicator dots */}
+        <div className="flex justify-center gap-2 mt-6">
+          {steps.map((_, index) => (
+            <div key={index} className="w-2 h-2 rounded-full bg-gray-300"></div>
+          ))}
+        </div>
       </div>
     </section>
   );
