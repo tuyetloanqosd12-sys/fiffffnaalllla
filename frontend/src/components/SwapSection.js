@@ -413,52 +413,57 @@ function SwapSection({ strategyState }) {
         </div>
       </div>
 
-      {/* Activity Stats */}
+      {/* Activity Stats & Supply Info - Combined */}
       <div className="card">
-        <h4 className="text-sm font-semibold text-gray-900 mb-4">Activity Stats</h4>
-        <div className="space-y-3">
-          <div className="flex justify-between items-center">
-            <span className="text-xs text-gray-600">Total Spent</span>
-            <span className="text-sm font-semibold text-gray-900">
-              {(activity.eth_spent_on_buybacks || 0).toFixed(3)} ETH
-            </span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Activity Stats Column */}
+          <div>
+            <h4 className="text-sm font-semibold text-gray-900 mb-4">Activity Stats</h4>
+            <div className="space-y-3">
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-gray-600">Total Spent</span>
+                <span className="text-sm font-semibold text-gray-900">
+                  {(activity.eth_spent_on_buybacks || 0).toFixed(3)} ETH
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-gray-600">Total Earned</span>
+                <span className="text-sm font-semibold text-gray-900">
+                  {(activity.eth_received_from_sales || 0).toFixed(3)} ETH
+                </span>
+              </div>
+              <div className="flex justify-between items-center pt-3 border-t border-gray-200">
+                <span className="text-xs text-gray-600">Net Profit</span>
+                <span className="text-sm font-bold text-emerald-600">
+                  +{((activity.eth_received_from_sales || 0) - (activity.eth_spent_on_buybacks || 0)).toFixed(3)} ETH
+                </span>
+              </div>
+            </div>
           </div>
-          <div className="flex justify-between items-center">
-            <span className="text-xs text-gray-600">Total Earned</span>
-            <span className="text-sm font-semibold text-gray-900">
-              {(activity.eth_received_from_sales || 0).toFixed(3)} ETH
-            </span>
-          </div>
-          <div className="flex justify-between items-center pt-3 border-t border-gray-200">
-            <span className="text-xs text-gray-600">Net Profit</span>
-            <span className="text-sm font-bold text-emerald-600">
-              +{((activity.eth_received_from_sales || 0) - (activity.eth_spent_on_buybacks || 0)).toFixed(3)} ETH
-            </span>
-          </div>
-        </div>
-      </div>
 
-      {/* Supply Info */}
-      <div className="card">
-        <h4 className="text-sm font-semibold text-gray-900 mb-4">Supply Info</h4>
-        <div className="space-y-3">
-          <div className="flex justify-between items-center">
-            <span className="text-xs text-gray-600">Total Supply</span>
-            <span className="text-sm font-semibold text-gray-900">
-              {(nftSupply.total_minted || 0).toLocaleString()}
-            </span>
-          </div>
-          <div className="flex justify-between items-center">
-            <span className="text-xs text-gray-600">Circulating</span>
-            <span className="text-sm font-semibold text-gray-900">
-              {(nftSupply.market_circulating || 0).toLocaleString()}
-            </span>
-          </div>
-          <div className="flex justify-between items-center">
-            <span className="text-xs text-gray-600">Burned</span>
-            <span className="text-sm font-semibold text-gray-900">
-              {(nftSupply.burned || 0).toLocaleString()}
-            </span>
+          {/* Supply Info Column */}
+          <div>
+            <h4 className="text-sm font-semibold text-gray-900 mb-4">Supply Info</h4>
+            <div className="space-y-3">
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-gray-600">Total Supply</span>
+                <span className="text-sm font-semibold text-gray-900">
+                  {(nftSupply.total_minted || 0).toLocaleString()}
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-gray-600">Circulating</span>
+                <span className="text-sm font-semibold text-gray-900">
+                  {(nftSupply.market_circulating || 0).toLocaleString()}
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-gray-600">Burned</span>
+                <span className="text-sm font-semibold text-gray-900">
+                  {(nftSupply.burned || 0).toLocaleString()}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
