@@ -141,14 +141,12 @@ const StrategyHero = ({ strategyState }) => {
           </div>
         </div>
 
-        {/* Mobile CTA */}
-        <div className="lg:hidden mt-6">
-          <button
-            onClick={scrollToSwap}
-            className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-emerald-600 hover:to-teal-600 shadow-lg transition-all"
-          >
-            Start Swapping →
-          </button>
+        {/* Mobile hint - swap is visible below */}
+        <div className="lg:hidden mt-6 flex items-center justify-center gap-2 text-emerald-600 font-medium">
+          <span className="text-sm">Swap below</span>
+          <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
         </div>
       </div>
     </div>
