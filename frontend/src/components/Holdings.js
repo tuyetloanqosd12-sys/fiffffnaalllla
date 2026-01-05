@@ -20,14 +20,14 @@ function Holdings({ strategyState }) {
 
   return (
     <div className="card animate-fade-in border-gray-200">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
         <div>
           <h3 className="text-2xl font-semibold text-gray-900">Holdings</h3>
           <p className="text-gray-600 mt-1 text-sm font-normal">
             Strategy is holding {holdings.length} NFTs valued at {totalValue.toFixed(2)} ETH
           </p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           {/* Sort Dropdown */}
           <div className="relative">
             <button
