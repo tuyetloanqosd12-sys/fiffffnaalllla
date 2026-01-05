@@ -396,24 +396,8 @@ function SwapSection({ strategyState }) {
           </div>
         )}
 
-        {/* Network Info */}
-        <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
-          <span>Network: {ACTIVE_NETWORK.name}</span>
-          <a 
-            href={ACTIVE_NETWORK.blockExplorer}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 hover:text-gray-700"
-          >
-            Explorer
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </a>
-        </div>
-
         {/* Fee Distribution Info */}
-        <div className="mt-3 px-3 py-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100/50">
+        <div className="mt-4 pt-4 border-t border-gray-100 px-3 py-2.5 bg-emerald-50/50 rounded-lg border-b border-emerald-100/50">
           <p className="text-xs text-gray-600 leading-relaxed">
             <span className="font-semibold text-gray-900">Fee Distribution:</span> 10% swap fee fuels the ecosystem — 
             <span className="text-emerald-700 font-medium"> 40%</span> NFT buybacks, 
